@@ -11,21 +11,18 @@ Bounty: https://make.fun/bounty/news-image-20261125
 ## What it is
 
 One 1024×1024 image summing up the world news of **Wednesday, 25 November 2026**:
-37 stories across 7 regions on a cream newspaper front page — three large
-features with full-width illustrations, ten illustrated medium cards,
-twenty-four sourced briefs, a world map with numbered pins 1–13, a
-stories-by-region bar, and a verification legend
-(CONFIRMED / OFFICIAL / REPORTED / CLAIM). Tuesday events are labelled
-Tuesday on their cards; US market closes are Tuesday 24 Nov closes
-reported Wednesday, Asia closes are Wednesday 25 Nov closes.
+36 stories across 9 regions as a broadsheet front page — lead stories,
+thirteen pictured stories located on a world map, and twenty-three dated
+briefs, every one first reported that Wednesday, with a date check naming
+the nearby Tuesday stories left out.
 
 ## How it runs
 
-- `main.ts` (Node 22, standard library only) copies the bundled
-  `entry.png` to `MAKEFUN_OUTPUT_DIR` (default `/output`). No network;
-  every run writes the same bytes.
-- `draw.py` renders `entry.png` with Pillow from the story data in
-  `stories.py`.
+- `main.py` (Python 3.13) draws the page with Pillow and writes
+  `entry.png` to `MAKEFUN_OUTPUT_DIR` (default `/output`). Where Pillow
+  is unavailable (the stdlib-only harness container) it publishes the
+  bundled `entry.png` instead — the same bytes this code renders.
+  No network; every run writes the same bytes.
 
 ## License
 
